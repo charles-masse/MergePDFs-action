@@ -1,4 +1,4 @@
-FROM debian:9.5-slim
+FROM debian:bookworm-slim
 RUN apt-get update -y
 RUN apt-get install -y qpdf
 
