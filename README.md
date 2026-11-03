@@ -16,16 +16,16 @@ jobs:
     name: CombinePDFS
     runs-on: ubuntu-latest
     env:
-      path: resources //CHANGE THIS
-      filename: example //CHANGE THIS
+      path: resources
+      filename: example
     steps:
-      - uses: actions/checkout@v2
-      - uses: elMuso/MergePDFs-action@1.1
+      - uses: actions/checkout@v7
+      - uses: charles-masse/MergePDFs-action@1.15
         with:
           path: ${{env.path}}
           filename: ${{env.filename}}
       - name: Upload combined pdf
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v7
         with:
           name: ${{env.filename}}
           path: ${{env.path}}/${{env.filename}}.pdf
